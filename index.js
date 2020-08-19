@@ -3,13 +3,12 @@ let dodger = document.getElementById("dodger");
 
 dodger.style.backgroundColor = "#FF1493";
 
-let moveDodgerLeft = (e) => {
-  const dodger = e.target.querySelector("#dodger");
-  const lPos = parseInt(dodger.style.left);
-
-  if ( lPos > 0 ) {
-    let newPos = `${lPos - 10}px`;
-    dodger.style.left = newPos;
+function moveDodgerLeft() {
+  let leftNumbers = dodger.style.left.replace("px", "");
+  let left = parseInt(leftNumbers, 10);
+ 
+  if (left > 0) {
+    dodger.style.left = `${left - 1}px`;
   }
 }
 
