@@ -21,7 +21,7 @@ function moveDodgerRight() {
 }
 
 document.addEventListener("keydown", function(e) {
-  if (e.key === "ArrowRight") {
+  if (e.key === "ArrowLeft") {
     moveDodgerLeft();
   }
   if (e.key === "ArrowRight") { 
