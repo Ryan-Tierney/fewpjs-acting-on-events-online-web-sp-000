@@ -1,23 +1,32 @@
 // Your code here
-function moveDodgerLeft()
-  let leftNumbers = dodger.style.left.replace("px", "");
-  let left = parseInt(leftNumbers, 10);
- 
-  if (left > 0) {
-    dodger.style.left = `${left - 1}px`;
-  if (left < 0) { 
-    dodger.style.right = `${left + 1}px`; 
-  }
-} 
+dodger.style.backgroundColor = "#FF1493";
 
-document.addEventListener("keydown", function(e) {
-  if (e.key === "ArrowLeft") {
-    moveDodgerLeft();
-  }
-});
+let moveDodgerLeft = (e) => {
+  const dodger = e.target.querySelector("#dodger");
+  const lPos = parseInt(dodger.style.left);
 
-document.addEventListener("keydown", function(e) { 
-  if (e.key === "ArrowRight") { 
-    moveDodgerRight();
+  if ( lPos > 0 ) {
+    let newPos = `${lPos - 10}px`;
+    dodger.style.left = newPos;
   }
-});
+}
+
+let moveDodgerRight = (e) => {
+  const dodger = e.target.querySelector("#dodger");
+  const lPos = parseInt(dodger.style.left);
+  const maxLpos = parseInt(document.querySelector("#game").offsetWidth)
+   - parseInt(dodger.offsetWidth);
+
+  if ( lPos < maxLpos ) {
+    let newPos = `${lPos + 10}px`;
+    dodger.style.left = newPos;
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.which == KEY_TABLE.LEFT) {
+    moveDodgerLeft(e);
+  } else if (e.which == KEY_TABLE.RIGHT) {
+    moveDodgerRight(e);
+  }
+})
