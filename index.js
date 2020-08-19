@@ -12,18 +12,6 @@ function moveDodgerLeft() {
   }
 }
 
-let moveDodgerRight = (e) => {
-  const dodger = e.target.querySelector("#dodger");
-  const lPos = parseInt(dodger.style.left);
-  const maxLpos = parseInt(document.querySelector("#game").offsetWidth)
-   - parseInt(dodger.offsetWidth);
-
-  if ( lPos < maxLpos ) {
-    let newPos = `${lPos + 10}px`;
-    dodger.style.left = newPos;
-  }
-}
-
 document.addEventListener("keydown", function(e) {
   if (e.key === "ArrowLeft") {
     moveDodgerLeft();
