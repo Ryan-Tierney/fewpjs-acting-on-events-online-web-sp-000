@@ -1,8 +1,4 @@
 // Your code here
-const KEY_TABLE = {
-  LEFT: 37,
-  RIGHT: 39
-}
 
 dodger.style.backgroundColor = "#FF1493";
 
