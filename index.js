@@ -24,10 +24,8 @@ let moveDodgerRight = (e) => {
   }
 }
 
-document.addEventListener('keydown', e => {
-  if (e.which == KEY_TABLE.LEFT) {
-    moveDodgerLeft(e);
-  } else if (e.which == KEY_TABLE.RIGHT) {
-    moveDodgerRight(e);
+document.addEventListener("keydown", function(e) {
+  if (e.key === "ArrowLeft") {
+    moveDodgerLeft();
   }
-})
+});
